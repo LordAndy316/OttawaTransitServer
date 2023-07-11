@@ -1,12 +1,13 @@
 class StopsController < ApplicationController
   def index
-    @stops = Stop.all
-    
+    @stops = Stop.all 
   end
+  
   def show 
     @stop = Stop.find(params[:id])
   end
-    def new
+  
+  def new
     @stop = Stop.new
   end
 
@@ -19,6 +20,7 @@ class StopsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
   def destroy
     @stop = Stop.find(params[:id])
     @stop.destroy
