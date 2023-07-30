@@ -3,6 +3,8 @@
 <div class="container-fluid bg-secondary" style="text-align:center ">
     <div class="container-sm bg-light">
         <h1>Stops</h1>
+        <%= button_to 'API',stop_path(@stops), method: :put %>
+        
         <ul>
         <% @stops.each do |stop| %>
             <li style="text-align:center">

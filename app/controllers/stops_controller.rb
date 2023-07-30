@@ -9,6 +9,11 @@ class StopsController < ApplicationController
     def new
     @stop = Stop.new
   end
+    def update
+      @stops = Stop.find(params[:id])
+      @stops.updateApi
+      redirect_to stop_path(@stops)
+  end
 
   def create
     @stop = Stop.new(stop_params)
